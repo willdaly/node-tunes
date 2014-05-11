@@ -1,0 +1,9 @@
+extends ../shared/template
+
+block content
+  h1 new artist
+  #newArtist
+    form(method='POST', action='/artists', enctype='multipart/form-data')
+      input(type='text', name='name', placeholder='artist name', autofocus=true)
+      input(type='file', name='art', placeholder='upload artist art')
+      button add artist

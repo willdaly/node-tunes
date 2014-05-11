@@ -1,0 +1,16 @@
+extends ../shared/template
+
+block content
+  h1 create a new song
+  #newsong
+    form(method='POST', action='/songs', enctype='multipart/form-data')
+      input(type='text', name='name', placeholder='song name', autofocus=true)
+      input(type='text', name='genre', placeholder='genre')
+      input(type='file', name='mp3')
+      select(name='artist')
+        each artist in artists
+          option= artist.name
+      select(name='album')
+        each album in albums
+          option= album.name
+      button add song

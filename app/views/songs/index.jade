@@ -1,0 +1,15 @@
+extends ../shared/template
+
+block content
+  h1 song-list
+  a(href='songs/new') new song
+  each album in albums
+    p= album.name
+    img(src='/img/#{album.name}/#{album.art}')
+  each artist in artists
+    p= artist.name
+    img(src='/img/#{artist.name}/#{artist.art}')
+  each song in songs
+    p= song.name
+    p= song.genre
+    audio(src='/audios/#{song.name}/#{song.mp3}', type='audio/mp3', controls=true)
